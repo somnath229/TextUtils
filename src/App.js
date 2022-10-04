@@ -25,35 +25,7 @@ function App() {
       setAlert(null)
     }, 2000);
   }
-
-  // const removeBodyClass = () =>{
-  //   document.body.classList.remove('bg-light'); 
-  //   document.body.classList.remove('bg-dark');
-  //   document.body.classList.remove('bg-success');
-  //   document.body.classList.remove('bg-primary');
-  //   document.body.classList.remove('bg-danger');
-  //   document.body.classList.remove('bg-warning');
-  // }
-  // const check = (c) =>{
-  //   if(c === 'dark'){
-  //     return 'Dark';
-  //   }else if(c === 'danger'){
-  //     return 'Red';
-  //   }else if(c === 'light'){
-  //     return 'Light';
-  //   }else if(c === 'success'){
-  //     return 'Green';
-  //   }else if(c === 'warning'){
-  //     return 'Yellow';
-  //   }else if(c === 'primary'){
-  //     return 'Blue';
-  //   }
-  // }
-
-  const toggleMode = (cls) => {
-    // removeBodyClass();
-    // console.log(cls);
-    // document.body.classList.add('bg-'+cls);
+   const toggleMode = (cls) => {
     if (mode === 'light') {
       setMode('dark');
       document.body.style.backgroundColor = '#343a40';
@@ -65,12 +37,7 @@ function App() {
       document.body.style.backgroundColor = 'white';
       document.body.style.color = 'black';
       showAlert(`Light mode enabled.`, "success")
-      //   setInterval(() => {
-      //      document.title = 'TextUtils: Light Mode';
-      //   }, 2000);
-      //   setInterval(() => {
-      //     document.title = 'new message';
-      //  }, 1500);
+  
     }
   }
   return (
@@ -83,29 +50,11 @@ function App() {
         <Alert alert={alert} />
         <div className="container my-3">
           <Routes>
-            <Route exact path="/" element={<Textform showAlert={showAlert} heading="Enter the text to convert below :" mode={mode} />} />
+            <Route exact path="/" element={<Textform showAlert={showAlert} heading="TextUtils: Word/Character Counter, UPPERCASE/LOWERCASE, Remove extra space, etc :" mode={mode} />} />
             <Route exact path="about" element={<About/>} />
           </Routes>
         </div>
       </Router>
-
-      
-    {/*  so use exact path = " "
-    /users --> components 1
-    /users/home --> components 2 */}
-
-
-      {/* Deprecated as in v6 switch is replaced with routes
-       <Routes>
-          <Route path="/about">
-            <About/>
-          </Route>
-            <Route path="/">
-              <Textform showAlert={showAlert} heading="Enter the text to convert below :" mode={mode} />
-            </Route>
-          </Routes>  
-        </div> 
-      </Router>  */}
     </>
 
 
