@@ -54,12 +54,12 @@ export default function Textform(props) {
                 <textarea className="form-control" value = {text} onChange={handleOnChange} id="myBox" rows="13"></textarea>
             </div>
             <div className="container my-3">
-            <button type="submit" className= {`btn btn-primary mb-3`} onClick={handleUpClick}>Convert to UPPERCASE</button>
-            <button type="submit" className="btn btn-primary mb-3 ms-1" onClick={handleDownClick} >Convert to lowercase</button>
-            <button type="submit" className="btn btn-primary mb-3 ms-1" onClick={handleExtraSpace} >Handle Extra Space</button>
-            <button type="submit" className="btn btn-primary mb-3 ms-1" onClick={handleCopyClick} >Copy</button>
-            <button type="submit" className="btn btn-primary mb-3 ms-1" onClick={handleClearClick} >Clear</button>
-            </div>           
+            <button disabled={text.length === 0} type="submit" className= {`btn btn-primary mb-3`} onClick={handleUpClick}>Convert to UPPERCASE</button>
+            <button disabled={text.length === 0} type="submit" className="btn btn-primary mb-3 ms-1" onClick={handleDownClick} >Convert to lowercase</button>
+            <button disabled={text.length === 0} type="submit" className="btn btn-primary mb-3 ms-1" onClick={handleExtraSpace} >Handle Extra Space</button>
+            <button disabled={text.length === 0} type="submit" className="btn btn-primary mb-3 ms-1" onClick={handleCopyClick} >Copy</button>
+            <button disabled={text.length === 0} type="submit" className="btn btn-primary mb-3 ms-1" onClick={handleClearClick} >Clear</button>
+            </div>        
         </div>
 
         <div className="container">
